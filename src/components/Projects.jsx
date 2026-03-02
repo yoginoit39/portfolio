@@ -31,6 +31,15 @@ const projects = [
     live: 'https://trip-planner-9w5v7nj8k-yoginoit39s-projects.vercel.app',
   },
   {
+    name: 'DesignIQ',
+    desc: 'AI-powered system design interview prep tool. Type any design prompt and get an interactive architecture diagram rendered with React Flow. A streaming AI coach on the side explains trade-offs, scalability strategies, and what interviewers look for.',
+    tech: ['FastAPI', 'Groq', 'LLaMA 3.3 70B', 'React Flow', 'React', 'Vite', 'Tailwind'],
+    color: '#8b5cf6',
+    bg: 'rgba(139,92,246,0.04)',
+    github: 'https://github.com/yoginoit39',
+    live: '',
+  },
+  {
     name: 'HomePulse AI',
     desc: 'Real estate market intelligence platform using a LangGraph multi-agent pipeline. Four specialized agents analyze FRED economic data to deliver AI-generated housing market insights with live Recharts visualizations.',
     tech: ['FastAPI', 'LangGraph', 'Groq', 'Next.js', 'TypeScript', 'Recharts', 'FRED API'],
