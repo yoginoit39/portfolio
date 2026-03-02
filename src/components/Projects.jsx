@@ -37,7 +37,7 @@ const projects = [
     color: '#8b5cf6',
     bg: 'rgba(139,92,246,0.04)',
     github: 'https://github.com/yoginoit39',
-    live: '',
+    live: 'https://design-iq-b5o4.vercel.app/',
   },
   {
     name: 'HomePulse AI',
