@@ -5,7 +5,7 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 const projects = [
   {
     name: 'MyBase',
-    desc: 'Full-stack backend-as-a-service platform inspired by Supabase. Each project gets an isolated PostgreSQL schema, auto-generated REST API, file storage via Cloudflare R2, and GitHub OAuth — all self-hosted.',
+    desc: 'A self-hosted backend-as-a-service platform built from scratch. Each project gets an isolated PostgreSQL database, auto-generated REST API, file storage, and a visual data editor — queryable from any app via a project API key. Supports email/password and GitHub OAuth.',
     tech: ['FastAPI', 'PostgreSQL', 'Angular 21', 'Angular Material', 'Cloudflare R2', 'Neon', 'JWT'],
     color: '#4f46e5',
     bg: 'rgba(79,70,229,0.04)',
@@ -28,7 +28,7 @@ const projects = [
     color: '#0891b2',
     bg: 'rgba(8,145,178,0.04)',
     github: 'https://github.com/yoginoit39',
-    live: null,
+    live: 'https://trip-planner-9w5v7nj8k-yoginoit39s-projects.vercel.app',
   },
   {
     name: 'HomePulse AI',
@@ -37,7 +37,7 @@ const projects = [
     color: '#059669',
     bg: 'rgba(5,150,105,0.04)',
     github: 'https://github.com/yoginoit39',
-    live: null,
+    live: 'https://home-pulse-c5gou1vt8-yoginoit39s-projects.vercel.app',
   },
 ]
 

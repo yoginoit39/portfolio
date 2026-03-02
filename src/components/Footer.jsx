@@ -23,7 +23,7 @@ export default function Footer() {
               <IconButton href="https://github.com/yoginoit39" target="_blank" sx={{ color: '#94a3b8', '&:hover': { color: 'white', bgcolor: 'rgba(255,255,255,0.08)' } }}>
                 <GitHubIcon />
               </IconButton>
-              <IconButton href="https://www.linkedin.com/in/yogesh-lakhani" target="_blank" sx={{ color: '#94a3b8', '&:hover': { color: 'white', bgcolor: 'rgba(255,255,255,0.08)' } }}>
+              <IconButton href="https://www.linkedin.com/in/yogesh-lakhanii/" target="_blank" sx={{ color: '#94a3b8', '&:hover': { color: 'white', bgcolor: 'rgba(255,255,255,0.08)' } }}>
                 <LinkedInIcon />
               </IconButton>
               <IconButton href="mailto:lakhaniy540@gmail.com" sx={{ color: '#94a3b8', '&:hover': { color: 'white', bgcolor: 'rgba(255,255,255,0.08)' } }}>

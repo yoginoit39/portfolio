@@ -113,7 +113,7 @@ export default function Hero() {
               variant="outlined"
               size="large"
               startIcon={<LinkedInIcon />}
-              href="https://www.linkedin.com/in/yogesh-lakhani"
+              href="https://www.linkedin.com/in/yogesh-lakhanii/"
               target="_blank"
               sx={{ px: 3.5, py: 1.5, fontSize: '15px', borderColor: '#d1d5db', color: '#374151', '&:hover': { borderColor: '#4f46e5', color: '#4f46e5', bgcolor: 'rgba(79,70,229,0.04)' } }}
             >
