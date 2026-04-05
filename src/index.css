@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+/* ── Custom properties ── */
+:root {
+  --bg: #050505;
+  --surface: #0a0a0a;
+  --card: rgba(255,255,255,0.03);
+  --card-border: rgba(255,255,255,0.07);
+  --accent: #00ff88;
+  --accent-indigo: #6366f1;
+  --text-primary: #ffffff;
+  --text-secondary: #71717a;
+  --font-heading: 'Syne', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* ── Reset & base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; background: var(--bg); }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Typography helpers ── */
+.font-heading { font-family: var(--font-heading); }
+.font-mono    { font-family: var(--font-mono); }
+
+/* ── Gradient text ── */
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #00ff88 50%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glassmorphism card ── */
+.glass {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ── Neon glow utility ── */
+.glow-green { box-shadow: 0 0 20px rgba(0,255,136,0.25); }
+.text-glow  { text-shadow: 0 0 40px rgba(0,255,136,0.5); }
+
+/* ── Animated dot-grid background ── */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  animation: drift 20s linear infinite;
+}
+
+/* ── Keyframes ── */
+@keyframes drift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 32px 32px; }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.85); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 12px rgba(0,255,136,0.3); }
+  50%       { box-shadow: 0 0 28px rgba(0,255,136,0.6); }
+}
+
+/* ── Animation utilities ── */
+.animate-fade-up { animation: fade-up 0.7s ease both; }
+.animate-pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+.animate-glow  { animation: glow-pulse 2.5s ease-in-out infinite; }
+
+/* ── Timeline connector ── */
+.timeline-line {
+  background: linear-gradient(to bottom, var(--accent), var(--accent-indigo), transparent);
+}
+
+/* ── Hover gradient border trick ── */
+.card-hover-border {
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-hover-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #00ff88, #6366f1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+.card-hover-border:hover::before { opacity: 1; }
+.card-hover-border:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }

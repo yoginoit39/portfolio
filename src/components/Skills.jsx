@@ -1,69 +1,74 @@
-import { Box, Container, Typography, Chip, Grid, Paper } from '@mui/material'
-
 const groups = [
-  { label: 'Programming', color: '#4f46e5', bg: 'rgba(79,70,229,0.08)', skills: ['Python', 'Java', 'C++', 'R'] },
-  { label: 'Machine Learning', color: '#7c3aed', bg: 'rgba(124,58,237,0.08)', skills: ['Scikit-learn', 'TensorFlow', 'PyTorch', 'XGBoost', 'Hugging Face'] },
-  { label: 'Deep Learning & NLP', color: '#2563eb', bg: 'rgba(37,99,235,0.08)', skills: ['CNN', 'LSTM', 'GAN', 'BERT', 'GPT', 'LLaMA', 'RAG', 'Prompt Engineering'] },
-  { label: 'Backend & APIs', color: '#059669', bg: 'rgba(5,150,105,0.08)', skills: ['FastAPI', 'REST APIs', 'Microservices', 'System Design', 'LangChain', 'OOP'] },
-  { label: 'Frontend', color: '#d97706', bg: 'rgba(217,119,6,0.08)', skills: ['React', 'Angular', 'Next.js', 'TypeScript'] },
-  { label: 'MLOps & DevOps', color: '#dc2626', bg: 'rgba(220,38,38,0.08)', skills: ['Docker', 'Kubernetes', 'MLflow', 'CI/CD', 'GitHub Actions', 'Terraform'] },
-  { label: 'Cloud Platforms', color: '#0891b2', bg: 'rgba(8,145,178,0.08)', skills: ['AWS', 'Google Cloud', 'Azure', 'SageMaker', 'Vertex AI', 'Lambda'] },
-  { label: 'Data & Streaming', color: '#7c3aed', bg: 'rgba(124,58,237,0.08)', skills: ['SQL', 'MongoDB', 'Cassandra', 'Apache Spark', 'Kafka', 'Hadoop'] },
+  { label: 'Programming',       accent: '#6366f1', skills: ['Python', 'Java', 'C++', 'R'] },
+  { label: 'Machine Learning',  accent: '#a78bfa', skills: ['Scikit-learn', 'TensorFlow', 'PyTorch', 'XGBoost', 'Hugging Face'] },
+  { label: 'Deep Learning & NLP', accent: '#60a5fa', skills: ['CNN', 'LSTM', 'GAN', 'BERT', 'GPT', 'LLaMA', 'RAG', 'Prompt Engineering'] },
+  { label: 'Backend & APIs',    accent: '#00ff88', skills: ['FastAPI', 'REST APIs', 'Microservices', 'System Design', 'LangChain', 'OOP'] },
+  { label: 'Frontend',          accent: '#f59e0b', skills: ['React', 'Angular', 'Next.js', 'TypeScript'] },
+  { label: 'MLOps & DevOps',   accent: '#f87171', skills: ['Docker', 'Kubernetes', 'MLflow', 'CI/CD', 'GitHub Actions', 'Terraform'] },
+  { label: 'Cloud Platforms',   accent: '#22d3ee', skills: ['AWS', 'Google Cloud', 'Azure', 'SageMaker', 'Vertex AI', 'Lambda'] },
+  { label: 'Data & Streaming',  accent: '#c084fc', skills: ['SQL', 'MongoDB', 'Cassandra', 'Apache Spark', 'Kafka', 'Hadoop'] },
 ]
 
 export default function Skills() {
   return (
-    <Box id="skills" sx={{ py: { xs: 8, md: 12 }, bgcolor: '#f9fafb' }}>
-      <Container maxWidth="lg">
-        <Typography variant="overline" sx={{ color: 'primary.main', fontWeight: 700, letterSpacing: 2.5, fontSize: '11px' }}>
-          EXPERTISE
-        </Typography>
-        <Typography variant="h3" sx={{ mt: 1, mb: 1.5, letterSpacing: '-1.5px', fontSize: { xs: '2rem', md: '2.75rem' } }}>
-          Skills & Technologies
-        </Typography>
-        <Typography color="text.secondary" sx={{ mb: 6, maxWidth: 520, lineHeight: 1.75 }}>
+    <section id="skills" style={{ padding: '96px 0', background: '#0a0a0a' }}>
+      <div style={{ maxWidth: 1152, margin: '0 auto', padding: '0 24px' }}>
+        {/* Section header */}
+        <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 11, color: '#00ff88', letterSpacing: '0.2em', marginBottom: 12, textTransform: 'uppercase' }}>
+          // expertise
+        </p>
+        <h2 className="font-heading" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 800, letterSpacing: '-1.5px', marginBottom: 12, color: '#fff' }}>
+          Skills &amp; Technologies
+        </h2>
+        <p style={{ fontFamily: 'Inter, sans-serif', color: '#52525b', lineHeight: 1.75, marginBottom: 56, maxWidth: 520 }}>
           A broad toolkit built across AI research, enterprise software engineering, and cloud infrastructure.
-        </Typography>
+        </p>
 
-        <Grid container spacing={2.5}>
-          {groups.map((g) => (
-            <Grid item xs={12} sm={6} md={4} key={g.label}>
-              <Paper
-                elevation={0}
-                sx={{
-                  p: 3,
-                  border: '1px solid #e5e7eb',
-                  borderRadius: 3,
-                  height: '100%',
-                  transition: 'all 0.2s ease',
-                  '&:hover': {
-                    boxShadow: `0 4px 24px rgba(0,0,0,0.08)`,
-                    borderColor: g.color,
-                    transform: 'translateY(-3px)',
-                  },
-                }}
-              >
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2 }}>
-                  <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: g.color, flexShrink: 0 }} />
-                  <Typography sx={{ fontWeight: 700, color: g.color, textTransform: 'uppercase', fontSize: '11px', letterSpacing: 1 }}>
-                    {g.label}
-                  </Typography>
-                </Box>
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.8 }}>
-                  {g.skills.map(s => (
-                    <Chip
-                      key={s}
-                      label={s}
-                      size="small"
-                      sx={{ bgcolor: g.bg, color: g.color, border: 'none', fontSize: '12px', fontWeight: 500, height: 26 }}
-                    />
-                  ))}
-                </Box>
-              </Paper>
-            </Grid>
+        {/* Grid */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 16 }}>
+          {groups.map(g => (
+            <div
+              key={g.label}
+              className="card-hover-border glass"
+              style={{
+                padding: 24,
+                borderRadius: 16,
+                position: 'relative',
+                zIndex: 0,
+              }}
+            >
+              {/* Category label */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
+                <span style={{ width: 8, height: 8, borderRadius: '50%', background: g.accent, display: 'block', boxShadow: `0 0 8px ${g.accent}` }} />
+                <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 10, color: g.accent, letterSpacing: '0.15em', textTransform: 'uppercase', fontWeight: 600 }}>
+                  {g.label}
+                </span>
+              </div>
+
+              {/* Tags */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                {g.skills.map(s => (
+                  <span
+                    key={s}
+                    style={{
+                      fontFamily: 'JetBrains Mono, monospace',
+                      fontSize: 11,
+                      color: '#71717a',
+                      background: 'rgba(255,255,255,0.04)',
+                      border: '1px solid rgba(255,255,255,0.06)',
+                      borderRadius: 6,
+                      padding: '3px 8px',
+                      fontWeight: 500,
+                    }}
+                  >
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
-        </Grid>
-      </Container>
-    </Box>
+        </div>
+      </div>
+    </section>
   )
 }

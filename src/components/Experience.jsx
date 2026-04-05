@@ -1,12 +1,10 @@
-import { Box, Container, Typography, Paper, Chip } from '@mui/material'
-
 const experiences = [
   {
     company: 'Morgan Stanley',
     role: 'Software Engineer',
     location: 'TX',
     period: 'May 2025 – Present',
-    color: '#4f46e5',
+    accent: '#00ff88',
     current: true,
     bullets: [
       'Architected end-to-end LLM-powered workflows integrating GPT and LLaMA models into enterprise platforms, embedding AI-driven decision support into production business processes.',
@@ -23,7 +21,7 @@ const experiences = [
     role: 'AI Engineer',
     location: 'IL',
     period: 'Oct 2024 – Mar 2025',
-    color: '#7c3aed',
+    accent: '#a78bfa',
     current: false,
     bullets: [
       'Built and scaled data-capturing workflows using Next.js and FastAPI, implementing real-time file processing pipelines for high-throughput document uploads and vectorization.',
@@ -38,7 +36,7 @@ const experiences = [
     role: 'Software Engineer',
     location: 'India',
     period: 'Jan 2019 – Feb 2023',
-    color: '#0891b2',
+    accent: '#22d3ee',
     current: false,
     bullets: [
       'Integrated OpenAI LLMs into document intelligence workflows using LangChain for prompt orchestration and contextual memory management.',
@@ -53,75 +51,131 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <Box id="experience" sx={{ py: { xs: 8, md: 12 }, bgcolor: '#ffffff' }}>
-      <Container maxWidth="lg">
-        <Typography variant="overline" sx={{ color: 'primary.main', fontWeight: 700, letterSpacing: 2.5, fontSize: '11px' }}>
-          CAREER
-        </Typography>
-        <Typography variant="h3" sx={{ mt: 1, mb: 1.5, letterSpacing: '-1.5px', fontSize: { xs: '2rem', md: '2.75rem' } }}>
+    <section id="experience" style={{ padding: '96px 0', background: '#050505' }}>
+      <div style={{ maxWidth: 1152, margin: '0 auto', padding: '0 24px' }}>
+        <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 11, color: '#00ff88', letterSpacing: '0.2em', marginBottom: 12, textTransform: 'uppercase' }}>
+          // career
+        </p>
+        <h2 className="font-heading" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 800, letterSpacing: '-1.5px', marginBottom: 12, color: '#fff' }}>
           Work Experience
-        </Typography>
-        <Typography color="text.secondary" sx={{ mb: 7, maxWidth: 500, lineHeight: 1.75 }}>
+        </h2>
+        <p style={{ fontFamily: 'Inter, sans-serif', color: '#52525b', lineHeight: 1.75, marginBottom: 64, maxWidth: 500 }}>
           5+ years building AI-powered systems across fintech and early-stage AI companies.
-        </Typography>
+        </p>
 
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-          {experiences.map((exp, i) => (
-            <Paper
-              key={i}
-              elevation={0}
-              sx={{
-                p: { xs: 3, md: 4 },
-                border: '1px solid #e5e7eb',
-                borderRadius: 3,
-                borderLeft: `4px solid ${exp.color}`,
-                transition: 'all 0.2s ease',
-                '&:hover': { boxShadow: '0 6px 28px rgba(0,0,0,0.08)', transform: 'translateY(-2px)' },
-              }}
-            >
-              <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 1.5, mb: 2.5 }}>
-                <Box>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 0.5 }}>
-                    <Typography variant="h5" sx={{ fontWeight: 700, letterSpacing: '-0.5px', color: '#111827' }}>
-                      {exp.company}
-                    </Typography>
-                    {exp.current && (
-                      <Chip label="Current" size="small" sx={{ bgcolor: 'rgba(16,185,129,0.1)', color: '#059669', fontWeight: 700, fontSize: '10px', height: 20 }} />
-                    )}
-                  </Box>
-                  <Typography sx={{ color: exp.color, fontWeight: 600, fontSize: '15px' }}>
-                    {exp.role} · {exp.location}
-                  </Typography>
-                </Box>
-                <Chip
-                  label={exp.period}
-                  size="small"
-                  sx={{ bgcolor: 'rgba(79,70,229,0.08)', color: '#4f46e5', fontWeight: 600, fontSize: '12px', alignSelf: 'flex-start' }}
-                />
-              </Box>
+        {/* Timeline */}
+        <div style={{ position: 'relative', paddingLeft: 32 }}>
+          {/* Glowing connector line */}
+          <div className="timeline-line" style={{
+            position: 'absolute',
+            left: 7,
+            top: 0,
+            bottom: 0,
+            width: 2,
+            borderRadius: 2,
+          }} />
 
-              <Box component="ul" sx={{ pl: 2.5, m: 0, mb: 2.5 }}>
-                {exp.bullets.map((b, j) => (
-                  <Box component="li" key={j} sx={{ color: '#6b7280', fontSize: '14px', lineHeight: 1.8, mb: 0.5 }}>
-                    {b}
-                  </Box>
-                ))}
-              </Box>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
+            {experiences.map((exp, i) => (
+              <div key={i} style={{ position: 'relative' }}>
+                {/* Timeline dot */}
+                <div style={{
+                  position: 'absolute',
+                  left: -32,
+                  top: 24,
+                  width: 14,
+                  height: 14,
+                  borderRadius: '50%',
+                  background: exp.accent,
+                  boxShadow: `0 0 12px ${exp.accent}`,
+                  border: '2px solid #050505',
+                }} />
 
-              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.8 }}>
-                {exp.tags.map(t => (
-                  <Chip
-                    key={t}
-                    label={t}
-                    size="small"
-                    sx={{ bgcolor: '#f3f4f6', color: '#374151', border: 'none', fontSize: '11px', fontWeight: 500, height: 24 }}
-                  />
-                ))}
-              </Box>
-            </Paper>
-          ))}
-        </Box>
-      </Container>
-    </Box>
+                {/* Card */}
+                <div
+                  className="glass card-hover-border"
+                  style={{
+                    padding: '28px 32px',
+                    borderRadius: 16,
+                    borderLeft: `3px solid ${exp.accent}`,
+                    position: 'relative',
+                    zIndex: 0,
+                  }}
+                >
+                  {/* Header row */}
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 12, marginBottom: 20 }}>
+                    <div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
+                        <h3 className="font-heading" style={{ fontSize: 20, fontWeight: 700, color: '#fff', letterSpacing: '-0.3px' }}>
+                          {exp.company}
+                        </h3>
+                        {exp.current && (
+                          <span style={{
+                            fontFamily: 'JetBrains Mono, monospace',
+                            fontSize: 10,
+                            color: '#00ff88',
+                            background: 'rgba(0,255,136,0.1)',
+                            border: '1px solid rgba(0,255,136,0.2)',
+                            borderRadius: 99,
+                            padding: '2px 8px',
+                            fontWeight: 600,
+                          }}>
+                            Current
+                          </span>
+                        )}
+                      </div>
+                      <p style={{ fontFamily: 'Inter, sans-serif', color: exp.accent, fontWeight: 600, fontSize: 14 }}>
+                        {exp.role} · {exp.location}
+                      </p>
+                    </div>
+                    <span style={{
+                      fontFamily: 'JetBrains Mono, monospace',
+                      fontSize: 11,
+                      color: '#52525b',
+                      background: 'rgba(255,255,255,0.04)',
+                      border: '1px solid rgba(255,255,255,0.06)',
+                      borderRadius: 8,
+                      padding: '4px 10px',
+                      whiteSpace: 'nowrap',
+                    }}>
+                      {exp.period}
+                    </span>
+                  </div>
+
+                  {/* Bullets */}
+                  <ul style={{ paddingLeft: 20, margin: '0 0 20px', display: 'flex', flexDirection: 'column', gap: 6 }}>
+                    {exp.bullets.map((b, j) => (
+                      <li key={j} style={{ fontFamily: 'Inter, sans-serif', color: '#52525b', fontSize: 14, lineHeight: 1.8 }}>
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Tags */}
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                    {exp.tags.map(t => (
+                      <span
+                        key={t}
+                        style={{
+                          fontFamily: 'JetBrains Mono, monospace',
+                          fontSize: 11,
+                          color: '#71717a',
+                          background: 'rgba(255,255,255,0.04)',
+                          border: '1px solid rgba(255,255,255,0.06)',
+                          borderRadius: 6,
+                          padding: '3px 8px',
+                        }}
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
   )
 }
