@@ -1,11 +1,24 @@
 const experiences = [
   {
+    company: 'Bank of America',
+    role: 'Software Engineer III - Infrastructure Automation',
+    location: 'Chandler, AZ · Hybrid',
+    period: 'May 2026 – Present',
+    accent: '#00ff88',
+    current: true,
+    bullets: [
+      'Wrote Ansible playbooks and YAML-based configuration templates to manage infrastructure provisioning, application deployment and service configuration across Linux/Unix environments.',
+      'Built and automated deployment of containerized middleware services (Apache Tomcat, JBoss EAP).',
+    ],
+    tags: ['Ansible', 'YAML', 'Linux', 'Tomcat', 'JBoss EAP'],
+  },
+  {
     company: 'Morgan Stanley',
     role: 'Software Engineer',
     location: 'TX',
-    period: 'May 2025 – Present',
-    accent: '#00ff88',
-    current: true,
+    period: 'May 2025 – Apr 2026',
+    accent: '#38bdf8',
+    current: false,
     bullets: [
       'Architected end-to-end LLM-powered workflows integrating GPT and LLaMA models into enterprise platforms, embedding AI-driven decision support into production business processes.',
       'Built RAG pipelines using LangChain, Redis Vector Search, and vector databases for low-latency semantic search across large financial datasets.',
@@ -17,35 +30,53 @@ const experiences = [
     tags: ['LLM', 'RAG', 'FastAPI', 'React', 'PyTorch', 'Docker', 'Kubernetes'],
   },
   {
+    company: 'Radical AI',
+    role: 'Software Engineer (Internship)',
+    location: 'New York · Remote',
+    period: 'Jun 2025 – Aug 2025',
+    accent: '#fb923c',
+    current: false,
+    bullets: [
+      'Built and scaled complex data-capturing workflows using Next.js frontend and Python (FastAPI) backend, implementing real-time file processing pipelines that handle high-throughput document uploads and vectorization at an early-stage start-up.',
+      'Optimized data pipelines using Docker containerization with custom multi-stage builds, implementing container lifecycle management and networking for microservices that process documents with sub-second response times.',
+      'Developed serverless architecture using AWS Lambda with event-driven workflows for async document chunking and embedding tasks integrating with container-based services in an OpenShift compatible architecture.',
+      'Built real-time streaming pipelines using Apache Kafka for high throughput document ingestion, decoupling upstream producers from LLM processing consumers and sustaining sub-second vectorization under concurrent load.',
+      "Engineered AI agents using OpenAI's models with vector databases for intelligent document processing and automated content generation, implementing multi-agent orchestration that enhanced data extraction accuracy by 40%.",
+    ],
+    tags: ['Next.js', 'FastAPI', 'Docker', 'AWS Lambda', 'Kafka', 'OpenAI'],
+  },
+  {
     company: 'Altheon AI',
-    role: 'AI Engineer',
-    location: 'IL',
+    role: 'Software Engineer (Apprenticeship)',
+    location: 'Chicago, IL · Remote',
     period: 'Oct 2024 – Mar 2025',
     accent: '#a78bfa',
     current: false,
     bullets: [
-      'Built and scaled data-capturing workflows using Next.js and FastAPI, implementing real-time file processing pipelines for high-throughput document uploads and vectorization.',
-      'Optimized data pipelines using Docker with custom multi-stage builds for sub-second microservice response times.',
-      'Developed serverless architecture using AWS Lambda for AI-powered document chunking and vector database operations.',
-      'Engineered AI agents using OpenAI models with vector databases for intelligent document processing, enhancing data extraction accuracy by 40%.',
+      "Engineered a RAG-based AI research assistant grounded in a 40-researcher institution's full document corpus, reducing literature review time by 60% through semantic search and automated citation sourcing.",
+      'Built a vector-indexed knowledge graph pipeline enabling semantic search and retrieval across an institutional paper library, powering fully sourced, citable AI-generated answers.',
+      'Developed an automated citation engine extracting metadata from PDFs, DOIs, and URLs, supporting bulk bibliography generation across APA, MLA, Chicago, and Vancouver formats.',
+      'Designed and shipped LLM-powered agentic workflows for document parsing, summarization, and knowledge-gap identification, cutting manual research workflows from days to minutes.',
+      'Built full-stack AI product features using TypeScript and Node.js on cloud-native infrastructure, deploying production LLM services for enterprise and academic clients.',
     ],
-    tags: ['OpenAI', 'Next.js', 'FastAPI', 'AWS Lambda', 'Docker', 'Vector DB'],
+    tags: ['RAG', 'LLM', 'TypeScript', 'Node.js', 'Vector DB'],
   },
   {
     company: 'Infinite Infolab',
     role: 'Software Engineer',
-    location: 'India',
+    location: 'Remote',
     period: 'Jan 2019 – Feb 2023',
     accent: '#22d3ee',
     current: false,
     bullets: [
-      'Integrated OpenAI LLMs into document intelligence workflows using LangChain for prompt orchestration and contextual memory management.',
-      'Designed scalable backend systems in Python and Java for AI-driven enterprise applications, improving response time by 30%.',
-      'Built RAG-based systems leveraging vector databases and Redis Vector Search for scalable document retrieval and semantic ranking.',
-      'Developed responsive frontend components using Angular and React for real-time AI-assisted document analysis.',
-      'Containerized microservices using Docker with optimized multi-stage builds to support high-throughput LLM-backed services.',
+      'Integrated OpenAI LLMs into document intelligence workflows using LangChain for prompt orchestration, multi-step reasoning, and contextual memory management.',
+      'Designed and developed scalable backend systems in Python and Java for AI-driven enterprise applications, integrating machine learning models into RESTful microservices and improving response time by 30%.',
+      'Designed and deployed RAG-based systems leveraging vector databases and Redis Vector Search for scalable document retrieval and semantic ranking.',
+      'Built scalable document ingestion pipelines using Python (FastAPI) backend and event-driven AWS Lambda architecture for AI-powered chunking and embedding generation.',
+      'Developed responsive frontend components using Angular and React to enable real-time AI-assisted document analysis and workflow automation.',
+      'Containerized microservices using Docker with optimized multi-stage builds to support high-throughput LLM-backed services in production environments.',
     ],
-    tags: ['LangChain', 'Python', 'Java', 'Angular', 'React', 'FastAPI', 'Docker'],
+    tags: ['LangChain', 'Python', 'Java', 'Angular', 'React', 'FastAPI', 'AWS Lambda', 'Docker'],
   },
 ]
 
@@ -60,7 +91,7 @@ export default function Experience() {
           Work Experience
         </h2>
         <p style={{ fontFamily: 'Inter, sans-serif', color: '#52525b', lineHeight: 1.75, marginBottom: 64, maxWidth: 500 }}>
-          5+ years building AI-powered systems across fintech and early-stage AI companies.
+          6+ years building AI-powered systems and infrastructure automation across fintech, banking, and early-stage AI companies.
         </p>
 
         {/* Timeline */}
