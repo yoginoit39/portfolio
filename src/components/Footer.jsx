@@ -24,15 +24,15 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#000', borderTop: '1px solid rgba(255,255,255,0.04)', padding: '56px 0 40px' }}>
+    <footer style={{ background: '#efe7d9', borderTop: '1px solid rgba(120,98,72,0.12)', padding: '56px 0 40px' }}>
       <div style={{ maxWidth: 1152, margin: '0 auto', padding: '0 24px' }}>
         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 32, marginBottom: 48 }}>
           {/* Branding */}
           <div>
-            <p className="font-heading" style={{ fontWeight: 800, fontSize: 22, color: '#fff', letterSpacing: '-0.5px', marginBottom: 8 }}>
-              Yogesh<span style={{ color: '#00ff88' }}>.</span>
+            <p className="font-heading" style={{ fontWeight: 800, fontSize: 22, color: '#2b241d', letterSpacing: '-0.5px', marginBottom: 8 }}>
+              Yogesh<span style={{ color: '#bf6847' }}>.</span>
             </p>
-            <p style={{ fontFamily: 'Inter, sans-serif', color: '#3f3f46', fontSize: 14, lineHeight: 1.7, maxWidth: 300 }}>
+            <p style={{ fontFamily: 'Inter, sans-serif', color: '#a4967f', fontSize: 14, lineHeight: 1.7, maxWidth: 300 }}>
               Software Engineer specializing in AI-powered systems and full-stack development. Open to new opportunities.
             </p>
           </div>
@@ -54,14 +54,14 @@ export default function Footer() {
                     width: 40,
                     height: 40,
                     borderRadius: 10,
-                    background: 'rgba(255,255,255,0.04)',
-                    border: '1px solid rgba(255,255,255,0.07)',
-                    color: '#52525b',
+                    background: 'rgba(120,98,72,0.06)',
+                    border: '1px solid rgba(120,98,72,0.14)',
+                    color: '#857a6a',
                     textDecoration: 'none',
                     transition: 'all 0.2s',
                   }}
-                  onMouseEnter={e => { e.currentTarget.style.color = '#00ff88'; e.currentTarget.style.borderColor = 'rgba(0,255,136,0.3)'; e.currentTarget.style.boxShadow = '0 0 16px rgba(0,255,136,0.2)'; e.currentTarget.style.background = 'rgba(0,255,136,0.06)'; }}
-                  onMouseLeave={e => { e.currentTarget.style.color = '#52525b'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)'; e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; }}
+                  onMouseEnter={e => { e.currentTarget.style.color = '#bf6847'; e.currentTarget.style.borderColor = 'rgba(194,110,74,0.3)'; e.currentTarget.style.boxShadow = '0 4px 14px rgba(194,110,74,0.18)'; e.currentTarget.style.background = 'rgba(194,110,74,0.08)'; }}
+                  onMouseLeave={e => { e.currentTarget.style.color = '#857a6a'; e.currentTarget.style.borderColor = 'rgba(120,98,72,0.14)'; e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.background = 'rgba(120,98,72,0.06)'; }}
                 >
                   {s.icon}
                 </a>
@@ -72,12 +72,12 @@ export default function Footer() {
               style={{
                 fontFamily: 'JetBrains Mono, monospace',
                 fontSize: 12,
-                color: '#3f3f46',
+                color: '#a4967f',
                 textDecoration: 'none',
                 transition: 'color 0.2s',
               }}
-              onMouseEnter={e => { e.currentTarget.style.color = '#00ff88'; }}
-              onMouseLeave={e => { e.currentTarget.style.color = '#3f3f46'; }}
+              onMouseEnter={e => { e.currentTarget.style.color = '#bf6847'; }}
+              onMouseLeave={e => { e.currentTarget.style.color = '#a4967f'; }}
             >
               lakhaniy540@gmail.com
             </a>
@@ -85,10 +85,10 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div style={{ height: 1, background: 'rgba(255,255,255,0.04)', marginBottom: 28 }} />
+        <div style={{ height: 1, background: 'rgba(120,98,72,0.12)', marginBottom: 28 }} />
 
         {/* Copyright */}
-        <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 11, color: '#27272a', textAlign: 'center' }}>
+        <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 11, color: '#b3a693', textAlign: 'center' }}>
           © {new Date().getFullYear()} Yogesh Lakhani · Built with React &amp; Tailwind CSS
         </p>
       </div>
