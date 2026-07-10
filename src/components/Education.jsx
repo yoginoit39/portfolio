@@ -1,69 +1,47 @@
 import Reveal from './Reveal'
+import SectionHeader from './SectionHeader'
 
 const education = [
-  { degree: 'Master of Computer Science', school: 'DePaul University', year: 'Mar 2025' },
-  { degree: 'Bachelor of Computer Science', school: 'International University of East Africa', year: 'Nov 2021' },
-  { degree: "Associate's in Software Engineering", school: 'Aptech Computer Education', year: 'Oct 2018' },
+  { degree: 'Master of Computer Science', school: 'DePaul University', year: '2025' },
+  { degree: 'Bachelor of Computer Science', school: 'International University of East Africa', year: '2021' },
+  { degree: "Associate's in Software Engineering", school: 'Aptech Computer Education', year: '2018' },
 ]
 
 const certifications = [
-  { name: 'AWS Certified Developer – Associate', issuer: 'Amazon Web Services', icon: '☁️' },
+  { name: 'AWS Certified Developer — Associate', issuer: 'Amazon Web Services', year: '' },
 ]
 
 export default function Education() {
   return (
-    <section id="education" style={{ padding: '96px 0', background: '#f7f2ea' }}>
+    <section id="education" style={{ padding: '110px 0', background: '#ece3d0' }}>
       <div style={{ maxWidth: 1152, margin: '0 auto', padding: '0 24px' }}>
-        <Reveal>
-          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 11, color: '#bf6847', letterSpacing: '0.2em', marginBottom: 12, textTransform: 'uppercase' }}>
-            // background
-          </p>
-          <h2 className="font-heading" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 800, letterSpacing: '-1.5px', marginBottom: 56, color: '#2b241d' }}>
-            Education &amp; Certifications
-          </h2>
-        </Reveal>
+        <SectionHeader
+          index="04"
+          eyebrow="Background"
+          title="Education & Certifications"
+        />
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 40 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 56 }}>
           {/* Education column */}
           <div>
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 10, color: '#857a6a', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 20 }}>
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 11, color: '#8b7d68', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: 8 }}>
               Education
             </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <div style={{ borderTop: '1px solid rgba(36,28,17,0.14)' }}>
               {education.map((e, i) => (
                 <Reveal key={i} delay={i * 60}>
-                  <div
-                    className="glass card-hover-border"
-                    style={{
-                      padding: '20px 24px',
-                      borderRadius: 14,
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      gap: 16,
-                      position: 'relative',
-                      zIndex: 0,
-                    }}
-                  >
-                    <span style={{ fontSize: 20, lineHeight: 1, marginTop: 2 }}>🎓</span>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 18, padding: '22px 4px', borderBottom: '1px solid rgba(36,28,17,0.14)' }}>
                     <div>
-                      <p style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700, color: '#2b241d', fontSize: 15, lineHeight: 1.3, marginBottom: 4 }}>
+                      <p className="font-serif" style={{ color: '#241c11', fontSize: 19, lineHeight: 1.3, marginBottom: 6 }}>
                         {e.degree}
                       </p>
-                      <p style={{ fontFamily: 'Inter, sans-serif', color: '#857a6a', fontSize: 13, marginBottom: 8 }}>
+                      <p style={{ fontFamily: 'Inter, sans-serif', color: '#8b7d68', fontSize: 13.5 }}>
                         {e.school}
                       </p>
-                      <span style={{
-                        fontFamily: 'JetBrains Mono, monospace',
-                        fontSize: 10,
-                        color: '#74855a',
-                        background: 'rgba(122,139,92,0.12)',
-                        border: '1px solid rgba(122,139,92,0.22)',
-                        borderRadius: 5,
-                        padding: '2px 8px',
-                      }}>
-                        {e.year}
-                      </span>
                     </div>
+                    <span className="font-serif-italic" style={{ fontSize: 16, color: '#b04e26', whiteSpace: 'nowrap' }}>
+                      {e.year}
+                    </span>
                   </div>
                 </Reveal>
               ))}
@@ -72,30 +50,18 @@ export default function Education() {
 
           {/* Certifications column */}
           <div>
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 10, color: '#857a6a', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 20 }}>
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 11, color: '#8b7d68', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: 8 }}>
               Certifications
             </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <div style={{ borderTop: '1px solid rgba(36,28,17,0.14)' }}>
               {certifications.map((c, i) => (
                 <Reveal key={i} delay={i * 60}>
-                  <div
-                    className="glass card-hover-border"
-                    style={{
-                      padding: '20px 24px',
-                      borderRadius: 14,
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: 16,
-                      position: 'relative',
-                      zIndex: 0,
-                    }}
-                  >
-                    <span style={{ fontSize: 28, lineHeight: 1 }}>{c.icon}</span>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 18, padding: '22px 4px', borderBottom: '1px solid rgba(36,28,17,0.14)' }}>
                     <div>
-                      <p style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700, color: '#2b241d', fontSize: 15, lineHeight: 1.3, marginBottom: 4 }}>
+                      <p className="font-serif" style={{ color: '#241c11', fontSize: 19, lineHeight: 1.3, marginBottom: 6 }}>
                         {c.name}
                       </p>
-                      <p style={{ fontFamily: 'Inter, sans-serif', color: '#857a6a', fontSize: 13 }}>
+                      <p style={{ fontFamily: 'Inter, sans-serif', color: '#8b7d68', fontSize: 13.5 }}>
                         {c.issuer}
                       </p>
                     </div>
